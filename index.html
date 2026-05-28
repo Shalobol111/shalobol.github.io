@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Современный одностраничный сайт с формой обратной связи">
+    <title>ARB TECH | Современная форма обратной связи</title>
+    
+    <!-- Google Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Theme -->
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'spin-slow': 'spin 2s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-primary-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 min-h-screen text-slate-800 dark:text-slate-100 transition-colors duration-300">
+    
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400">
+        Перейти к основному контенту
+    </a>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border-b border-slate-200/50 dark:border-slate-700/50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2 group" aria-label="Home">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="font-semibold text-lg hidden sm:block">ARB TECH</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">О нас</a>
+                    <a href="#services" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Услуги</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Контакты</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900">
+                    Связаться
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        
+        <!-- Hero Section -->
+        <section id="about" class="relative overflow-hidden py-20 sm:py-32" aria-labelledby="hero-heading">
+            <!-- Background Decorative Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/30 dark:bg-primary-800/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-200/30 dark:bg-accent-800/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center animate-fade-in">
+                    <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                        <span class="block">Свяжитесь с нами</span>
+                        <span class="block bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">в любое время</span>
+                    </h1>
+                    <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-10 animate-slide-up" style="animation-delay: 0.2s;">
+                        Мы всегда рады помочь вам. Заполните форму ниже, и наша команда свяжется с вами в течение 24 часов.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-medium transition-all duration-200 hover:shadow-xl hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900 transform hover:-translate-y-0.5">
+                            Начать разговор
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900">
+                            Узнать больше
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm" aria-labelledby="services-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 id="services-heading" class="text-3xl sm:text-4xl font-bold mb-4">Наши преимущества</h2>
+                    <p class="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                        Мы предоставляем лучший сервис для наших клиентов
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <article class="group p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-primary-200 dark:hover:border-primary-800 transform hover:-translate-y-1 scroll-reveal">
+                        <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Быстрый ответ</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Отвечаем на все запросы в течение 24 часов в рабочее время.</p>
+                    </article>
+
+                    <!-- Service Card 2 -->
+                    <article class="group p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-primary-200 dark:hover:border-primary-800 transform hover:-translate-y-1 scroll-reveal" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Безопасность</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Гарантируем конфиденциальность всех ваших данных.</p>
+                    </article>
+
+                    <!-- Service Card 3 -->
+                    <article class="group p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-primary-200 dark:hover:border-primary-800 transform hover:-translate-y-1 scroll-reveal" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Поддержка 24/7</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Наша команда поддержки доступна круглосуточно.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20" aria-labelledby="contact-heading">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 id="contact-heading" class="text-3xl sm:text-4xl font-bold mb-4">Напишите нам</h2>
+                    <p class="text-slate-600 dark:text-slate-300">
+                        Заполните форму ниже, и мы свяжемся с вами как можно скорее
+                    </p>
+                </div>
+
+                <!-- Form Container with Glassmorphism -->
+                <div class="relative p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-2xl border border-white/20 dark:border-slate-700/50">
+                    <!-- Decorative gradient border effect -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary-500/10 to-accent-500/10 dark:from-primary-500/5 dark:to-accent-500/5 pointer-events-none"></div>
+                    
+                    <form id="contact-form" class="relative space-y-6" novalidate aria-describedby="form-status">
+                        
+                        <!-- Name Field -->
+                        <div class="space-y-2">
+                            <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                Имя
+                                <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+                            </label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    minlength="2" 
+                                    maxlength="50"
+                                    autocomplete="name"
+                                    placeholder="Иван Иванов"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 invalid:border-red-400 invalid:focus:ring-red-500 valid:border-emerald-400 valid:focus:ring-emerald-500 peer"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="name-error"
+                                >
+                                <!-- Success/Error Icon -->
+                                <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none opacity-0 peer-valid:opacity-100 peer-valid:text-emerald-500 transition-opacity">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p id="name-error" class="text-sm text-red-600 dark:text-red-400 hidden" role="alert" aria-live="polite"></p>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                Email
+                                <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+                            </label>
+                            <div class="relative">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    maxlength="100"
+                                    autocomplete="email"
+                                    placeholder="ivan@example.com"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 invalid:border-red-400 invalid:focus:ring-red-500 valid:border-emerald-400 valid:focus:ring-emerald-500 peer"
+                                    aria-required="true"
+                                    aria-invalid="false"
+                                    aria-describedby="email-error"
+                                >
+                                <!-- Success/Error Icon -->
+                                <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none opacity-0 peer-valid:opacity-100 peer-valid:text-emerald-500 transition-opacity">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p id="email-error" class="text-sm text-red-600 dark:text-red-400 hidden" role="alert" aria-live="polite"></p>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="space-y-2">
+                            <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-200">
+                                Сообщение
+                                <span class="text-red-500 ml-1" aria-hidden="true">*</span>
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                required 
+                                minlength="10" 
+                                maxlength="1000"
+                                rows="5"
+                                placeholder="Расскажите, чем мы можем помочь..."
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 invalid:border-red-400 invalid:focus:ring-red-500 valid:border-emerald-400 valid:focus:ring-emerald-500 resize-none peer"
+                                aria-required="true"
+                                aria-invalid="false"
+                                aria-describedby="message-error message-counter"
+                            ></textarea>
+                            <div class="flex justify-between items-center">
+                                <p id="message-error" class="text-sm text-red-600 dark:text-red-400 hidden" role="alert" aria-live="polite"></p>
+                                <p id="message-counter" class="text-xs text-slate-500 dark:text-slate-400">
+                                    <span class="current-chars">0</span>/1000
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button 
+                                type="submit" 
+                                id="submit-btn"
+                                class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-slate-800 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none transform hover:-translate-y-0.5"
+                                aria-busy="false"
+                            >
+                                <span class="btn-text">Отправить сообщение</span>
+                                <span class="btn-loading hidden items-center">
+                                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Отправка...
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- Form Status Message -->
+                        <div id="form-status" class="hidden p-4 rounded-xl" role="status" aria-live="polite">
+                            <!-- Success State -->
+                            <div id="success-message" class="hidden items-center text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800">
+                                <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.</span>
+                            </div>
+                            <!-- Error State -->
+                            <div id="error-message" class="hidden items-center text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+                                <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-700" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                    © 2024 ContactUs. Все права защищены.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Privacy Policy">
+                        <span class="text-sm">Конфиденциальность</span>
+                    </a>
+                    <a href="#" class="text-slate-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Terms of Service">
+                        <span class="text-sm">Условия</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
