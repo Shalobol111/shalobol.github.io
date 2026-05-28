@@ -133,8 +133,8 @@ const CONFIG = {
     DEBUG: true,
     
     // Telegram Bot Configuration
-    TELEGRAM_BOT_TOKEN: '1234567890:ABCdefGHIjklMNOpqrsTUVwxyz', // Ваш токен
-    TELEGRAM_CHAT_ID: '123456789', // Ваш chat_id или @username
+    TELEGRAM_BOT_TOKEN: '', // Ваш токен
+    TELEGRAM_CHAT_ID: '', // Ваш chat_id или @username
     
     // ... остальные настройки
 };
